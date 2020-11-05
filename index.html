@@ -1,19 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Thomas Demkowski</h1>
-    <h3>First proj</h3>
-    <a href="http://acurac.herokuapp.com">acurac.herokuapp.com</a>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-    <h3>Second proj</h3>
-    <p>React Frontend</p>
-    <a href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/">http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</a>
-    <p>Node.js backend</p>
-    <a href="https://acurac-post-backend.herokuapp.com/">https://acurac-post-backend.herokuapp.com/</a>
-</body>
+      body {
+        background: #f6f9fc;
+        font-family: "Open Sans";
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #525f7f;
+      }
+
+      .blue {
+        color: #747fe0;
+      }
+
+      .dark {
+        color: #525f7f;
+      }
+
+      .name {
+        font-size: 3rem;
+      }
+
+      .home {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        padding-top: 0;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        width: 80%;
+        min-width: 40rem;
+        position: relative;
+      }
+
+      #contact {
+        height: 40rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        width: 95%;
+        padding: 1rem;
+      }
+
+      .button {
+        outline: none;
+        font-size: larger;
+        border-style: none;
+        text-decoration: none;
+        background-image: linear-gradient(
+            transparent 6px,
+            #ac46ff 4px,
+            #ac46ff 0px,
+            transparent 6px
+          ),
+          linear-gradient(transparent 4px, #8d95d84d 4px);
+        background-size: 0% 10px, 0% 10px;
+        background-position: 0 bottom, 0 bottom;
+        transition: background-size 0.4s ease-in-out;
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+
+      .button:hover {
+        color: #747fe0;
+        background-size: 100% 10px;
+      }
+
+      #projects {
+        display: flex;
+        flex-direction: column;
+      }
+
+      hr {
+        border: 0;
+        clear: both;
+        display: block;
+        width: 96%;
+        background-color: #525f7f;
+        height: 1px;
+      }
+
+      .line {
+        width: 100%;
+      }
+
+      a {
+        color: #747fe0;
+      }
+      a:visited {
+        color: #747fe0;
+      }
+      a:hover {
+        color: #747fe0;
+      }
+      a:active {
+        color: #747fe0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home">
+      <div class="nav">
+        <button
+          class="button dark"
+          type="button"
+          onClick="document.getElementById('projects').scrollIntoView();"
+        >
+          Projects
+        </button>
+        <button
+          class="button dark"
+          type="button"
+          onClick="document.getElementById('contact').scrollIntoView();"
+        >
+          Contact me
+        </button>
+      </div>
+      <hr class="dark line" />
+
+      <h1 class="blue name">Thomas Demkowski</h1>
+      <div id="projects">
+        <p>I am a MERN stack Web app developer blablabla</p>
+        <h1 class="title">Projects</h1>
+        <h3>Online Store</h3>
+        <a href="http://acurac.herokuapp.com">
+          <strong>acurac.herokuapp.com </strong>
+        </a>
+
+        <h3>Second project</h3>
+        <p>React Frontend</p>
+        <a href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/">
+            <strong>http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</strong>
+        </a>
+        <p>Node.js backend</p>
+        <a href="https://acurac-post-backend.herokuapp.com/">
+            <strong>https://acurac-post-backend.herokuapp.com/</strong>
+        </a>
+
+        <h3>Instagram Clone</h3>
+        <a href="https://github.com/tdemkowski/Instagram-Clone">
+            <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
+        </a>
+      </div>
+
+      <div id="contact">
+        <h1>Contact me</h1>
+        <p>linkedin</p>
+        <p>tdemkowski96@gmail.com</p>
+      </div>
+    </div>
+  </body>
 </html>
