@@ -42,15 +42,17 @@
         margin-right: 4rem;
         width: 80%;
         min-width: 40rem;
+        max-width: 60rem;
         position: relative;
       }
 
       #contact {
-        height: 20rem;
+        height: 15rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        margin-top: 5rem;
       }
 
       .nav {
@@ -104,6 +106,7 @@
 
       a {
         color: #747fe0;
+        text-decoration: none;
       }
       a:visited {
         color: #747fe0;
@@ -124,33 +127,78 @@
       a.anchor {
         display: block;
         position: relative;
-        top: 1rem;
+        top: 1.3rem;
+      }
+
+      .nav-item {
+        margin-left: 1rem;
+      }
+
+      .project_item {
+        min-height: 15rem;
+        border-style: solid;
+        border-radius: 1rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        padding-bottom: 2rem;
+        overflow: hidden;
+        position: relative;
+        transition-duration: 0.2s;
+      }
+
+      .project_item:hover {
+        color: #747fe0;
+      }
+
+      .title {
+        align-self: center;
+      }
+
+      img {
+        opacity: 0.1;
+        position: relative;
+      }
+
+      .image {
+        z-index: 0;
+        transition-duration: 0.5s;
+        position: absolute;
+        top: 0;
+      }
+
+      .image:hover {
+        transition-duration: 0.5s;
+        top: -5rem;
       }
     </style>
   </head>
+
   <body>
     <div class="home">
       <div class="nav">
         <button
-          class="button dark"
+          class="button dark nav-item"
           type="button"
           onClick="document.getElementById('about').scrollIntoView();"
         >
           About me
         </button>
         <button
-          class="button dark"
+          class="button dark nav-item"
           type="button"
           onClick="document.getElementById('projects').scrollIntoView();"
         >
           Projects
         </button>
         <button
-          class="button dark"
+          class="button dark nav-item"
           type="button"
           onClick="document.getElementById('contact').scrollIntoView();"
         >
-          Contact me
+          Contact
         </button>
       </div>
       <hr class="dark line" />
@@ -162,7 +210,9 @@
           Bachelor of Science majored in Mathematics - Macquarie University,
           Norde Ryde
         </li>
-        <li></li>
+        <li>My <a href="https://tdemkowski.github.io/CV.pdf" target="_blank"
+          ><strong>Curriculum Vitae</strong></a
+        ></li>
         <p>
           I am a web app developer working primarily with MongoDB, ExpressJs,
           ReactJs and NodeJs.
@@ -171,51 +221,69 @@
 
       <div id="projects">
         <h1 class="title">Projects</h1>
-        <h3>Online Store</h3>
-        <a href="http://acurac.herokuapp.com">
-          <strong>acurac.herokuapp.com </strong>
-        </a>
+        <div class="project_item" id="online-store">
+          <h3>Online Store</h3>
+          <a href="http://acurac.herokuapp.com" target="_blank">
+            <strong>acurac.herokuapp.com </strong>
+          </a>
+          <a href="http://acurac.herokuapp.com" class="image">
+            <img src="https://i.imgur.com/zb8wZpC.png" alt="">
+          </a>
+        </div>
 
-        <h3>Second project</h3>
-        <p>React Frontend</p>
-        <a
-          href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/"
-        >
-          <strong
-            >http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</strong
+        <div class="project_item">
+          <h3>Second project</h3>
+          <p>React Frontend</p>
+          <a
+            href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/"
+            target="_blank"
           >
-        </a>
-        <p>Node.js backend</p>
-        <a href="https://acurac-post-backend.herokuapp.com/">
-          <strong>https://acurac-post-backend.herokuapp.com/</strong>
-        </a>
+            <strong
+              >http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</strong
+            >
+          </a>
+          <p>Node.js backend</p>
+          <a href="https://acurac-post-backend.herokuapp.com/" target="_blank">
+            <strong>https://acurac-post-backend.herokuapp.com/</strong>
+          </a>
+        </div>
 
-        <h3>Instagram Clone</h3>
-        <a href="https://github.com/tdemkowski/Instagram-Clone">
-          <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
-        </a>
+        <div class="project_item">
+          <h3>Instagram Clone</h3>
+          <a href="https://github.com/tdemkowski/Instagram-Clone" target="_blank">
+            <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
+          </a>
+        </div>
 
-        <h3>Clubin Design Slice</h3>
-        <a href="https://codepen.io/tdemkowski/pen/mdVebBR">
-          <strong>https://codepen.io/tdemkowski/pen/mdVebBR</strong>
-        </a>
+        <div class="project_item">
+          <h3>Clubin Design Slice</h3>
+          <a href="https://codepen.io/tdemkowski/pen/mdVebBR" target="_blank">
+            <strong>https://codepen.io/tdemkowski/pen/mdVebBR</strong>
+          </a>
+        </div>
 
-        <h3>Accordion</h3>
-        <a href="https://codepen.io/tdemkowski/pen/gOrNwzG">
-          <strong>https://codepen.io/tdemkowski/pen/gOrNwzG</strong>
-        </a>
+        <div class="project_item">
+          <h3>Accordion</h3>
+          <a href="https://codepen.io/tdemkowski/pen/gOrNwzG" target="_blank">
+            <strong>https://codepen.io/tdemkowski/pen/gOrNwzG</strong>
+          </a>
+        </div>
       </div>
 
       <div id="contact">
-        <h1>Contact me</h1>
+        <h1>Contact me!</h1>
 
         <div class="contacts">
           <a
             class="anchor"
             href="https://www.linkedin.com/in/thomas-demkowski-212b0b1ba/"
+            target="_blank"
             >linkedin</a
           >
           <p>tdemkowski96@gmail.com</p>
+          <a class="anchor" href="https://github.com/tdemkowski" target="_blank"
+            >github</a
+          >
         </div>
       </div>
     </div>
