@@ -7,6 +7,10 @@
     <style>
       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         background: #f6f9fc;
         font-family: "Open Sans";
@@ -42,7 +46,7 @@
       }
 
       #contact {
-        height: 40rem;
+        height: 20rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -110,11 +114,30 @@
       a:active {
         color: #747fe0;
       }
+
+      .contacts {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      a.anchor {
+        display: block;
+        position: relative;
+        top: 1rem;
+      }
     </style>
   </head>
   <body>
     <div class="home">
       <div class="nav">
+        <button
+          class="button dark"
+          type="button"
+          onClick="document.getElementById('about').scrollIntoView();"
+        >
+          About me
+        </button>
         <button
           class="button dark"
           type="button"
@@ -132,9 +155,21 @@
       </div>
       <hr class="dark line" />
 
-      <h1 class="blue name">Thomas Demkowski</h1>
+      <div id="about">
+        <h1 class="blue name">Thomas Demkowski</h1>
+        <li>Sydney, NSW, Australia</li>
+        <li>
+          Bachelor of Science majored in Mathematics - Macquarie University,
+          Norde Ryde
+        </li>
+        <li></li>
+        <p>
+          I am a web app developer working primarily with MongoDB, ExpressJs,
+          ReactJs and NodeJs.
+        </p>
+      </div>
+
       <div id="projects">
-        <p>I am a MERN stack Web app developer blablabla</p>
         <h1 class="title">Projects</h1>
         <h3>Online Store</h3>
         <a href="http://acurac.herokuapp.com">
@@ -143,24 +178,45 @@
 
         <h3>Second project</h3>
         <p>React Frontend</p>
-        <a href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/">
-            <strong>http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</strong>
+        <a
+          href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/"
+        >
+          <strong
+            >http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</strong
+          >
         </a>
         <p>Node.js backend</p>
         <a href="https://acurac-post-backend.herokuapp.com/">
-            <strong>https://acurac-post-backend.herokuapp.com/</strong>
+          <strong>https://acurac-post-backend.herokuapp.com/</strong>
         </a>
 
         <h3>Instagram Clone</h3>
         <a href="https://github.com/tdemkowski/Instagram-Clone">
-            <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
+          <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
+        </a>
+
+        <h3>Clubin Design Slice</h3>
+        <a href="https://codepen.io/tdemkowski/pen/mdVebBR">
+          <strong>https://codepen.io/tdemkowski/pen/mdVebBR</strong>
+        </a>
+
+        <h3>Accordion</h3>
+        <a href="https://codepen.io/tdemkowski/pen/gOrNwzG">
+          <strong>https://codepen.io/tdemkowski/pen/gOrNwzG</strong>
         </a>
       </div>
 
       <div id="contact">
         <h1>Contact me</h1>
-        <p>linkedin</p>
-        <p>tdemkowski96@gmail.com</p>
+
+        <div class="contacts">
+          <a
+            class="anchor"
+            href="https://www.linkedin.com/in/thomas-demkowski-212b0b1ba/"
+            >linkedin</a
+          >
+          <p>tdemkowski96@gmail.com</p>
+        </div>
       </div>
     </div>
   </body>
