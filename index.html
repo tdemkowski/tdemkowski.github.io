@@ -56,10 +56,17 @@
       }
 
       .nav {
+        width: 100%;
+        z-index: 100;
         display: flex;
         justify-content: flex-end;
         width: 95%;
         padding: 1rem;
+        position: fixed;
+        top: 0;
+        right: 2rem;
+        border-bottom: #525f7f 1px solid;
+        background:  #f6f9fc;
       }
 
       .button {
@@ -89,6 +96,7 @@
       #projects {
         display: flex;
         flex-direction: column;
+        padding-top: 3rem;
       }
 
       hr {
@@ -107,6 +115,7 @@
       a {
         color: #747fe0;
         text-decoration: none;
+        z-index: 10;
       }
       a:visited {
         color: #747fe0;
@@ -132,11 +141,12 @@
 
       .nav-item {
         margin-left: 1rem;
+        cursor: pointer;
       }
 
       .project_item {
         min-height: 15rem;
-        border-style: solid;
+        border: solid 1px;
         border-radius: 1rem;
         margin-bottom: 3rem;
         display: flex;
@@ -150,7 +160,8 @@
       }
 
       .project_item:hover {
-        color: #747fe0;
+        border-color: #747fe0;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22), inset 0px 0px 50px 0px  #747fe048;
       }
 
       .title {
@@ -158,20 +169,35 @@
       }
 
       img {
-        opacity: 0.1;
+        opacity: 0.08;
         position: relative;
       }
 
       .image {
-        z-index: 0;
-        transition-duration: 0.5s;
+        transition-duration: 1s;
         position: absolute;
         top: 0;
       }
-
-      .image:hover {
-        transition-duration: 0.5s;
+      .project_item:hover .image {
         top: -5rem;
+      }
+      /* .image:hover {
+        top: -5rem;
+      } */
+
+      .image > a {
+        color: red;
+      }
+
+      .project_item_details {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #about {
+        padding-top: 3rem;
       }
     </style>
   </head>
@@ -201,74 +227,145 @@
           Contact
         </button>
       </div>
-      <hr class="dark line" />
+      
 
       <div id="about">
         <h1 class="blue name">Thomas Demkowski</h1>
-        <li>Sydney, NSW, Australia</li>
-        <li>
-          Bachelor of Science majored in Mathematics - Macquarie University,
-          Norde Ryde
-        </li>
-        <li>My <a href="https://tdemkowski.github.io/CV.pdf" target="_blank"
-          ><strong>Curriculum Vitae</strong></a
-        ></li>
+        <ul>
+          <li>Sydney, NSW, Australia</li>
+          <li>
+            B.Sc. Mathematics - Macquarie University, Norde Ryde
+          </li>
+          <li>My <a href="https://tdemkowski.github.io/CV.pdf" target="_blank">
+            <strong>Curriculum Vitae</strong></a>
+          </li>
+        </ul>
         <p>
-          I am a web app developer working primarily with MongoDB, ExpressJs,
-          ReactJs and NodeJs.
+          I am a full-stack Web App developer and have been doing web development for two years now, and, with a minor in computing as part of my degree, another two years of experience in software development. 
+          I am very comfortable working with MongoDB, ExpressJs, ReactJs and NodeJs and consider this as my ace stack.
         </p>
+        <p>
+          Skills:
+        </p>
+        <ul>
+          <li>HTML, CSS, SASS, EJS, Handlebars, React/Redux</li>
+          <li>Javascript, Typescript, Java, Python</li>
+          <li>MongoDB, MySQL, PostgreSQL</li>
+        </ul>
+
       </div>
+
 
       <div id="projects">
+
         <h1 class="title">Projects</h1>
+
         <div class="project_item" id="online-store">
-          <h3>Online Store</h3>
-          <a href="http://acurac.herokuapp.com" target="_blank">
-            <strong>acurac.herokuapp.com </strong>
-          </a>
-          <a href="http://acurac.herokuapp.com" class="image">
-            <img src="https://i.imgur.com/zb8wZpC.png" alt="">
-          </a>
+          <div class="project_item_details">
+            <h3>Online Store</h3>
+            <a href="http://acurac.herokuapp.com" target="_blank">
+              <strong>View App</strong>
+            </a>
+            <p>Source code</p>
+            <a href="https://github.com/tdemkowski/Online-Store" target="_blank"><strong>github.com/tdemkowski/Online-Store</strong></a>
+            <p>
+              An Online Store where clients can create an create an account and purchase/sell products. It uses EJS,CSS, NodeJs, ExpressJs and Mongoose (MongoDB). Stripe API is used to deal with transactions. 
+            </p>
+            <p>
+              Using Mailgun, clients who sign-up will have a confirmation email sent to them by the Store. Users who want their password reset are emailed a link with a generated token (using the Json Web Token library) giving them access to changing their password.
+            </p>
+            <p>
+              There is user authentication (such as CSRF tokens) to give access or restrict users from interacting with what they should or should not be able to. I use express-validator to handle all routes. Sinon and Chain were used for unit testing the backend controllers.
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="https://i.imgur.com/zb8wZpC.png" alt="" draggable="false">
+          </div>
+        </div>
+
+
+        <div class="project_item">
+          <div class=project_item_details>
+            <h3>MessageNode</h3>
+            <a
+              href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/"
+              target="_blank">
+              <strong>View App</strong>
+            </a>
+            <p>Source code</p>
+            <a href="https://github.com/tdemkowski/messageNode-Frontend" target="_blank">
+              <strong>Frontend code</strong>
+            </a>
+            <a href="https://github.com/tdemkowski/messageNode-Backend" target="_blank">
+              <strong>Backend code</strong>
+            </a>
+            <p>
+              This is a post-board application built with React, ExpressJs, NodeJs and Mongoose (MongoDB). 
+              The focus of this project was to practice using Websockets, Socket.io and GraphQL. 
+            </p>
+            <p>
+              Clients can sign-up and log-in, create posts and set a status for other users to see. Has user/client authentication using the Express Validator library. 
+            </p>
+            <p>
+              You can use with 'test@email.com' with password 'tester' to bypass the log-in page.
+            </p>
+          </div>
+
+          <div class="image">
+            <img src="https://i.imgur.com/lARrgz6.png" alt="" draggable="false">
+          </div>
+        </div>
+
+
+        <div class="project_item">
+          <div class=project_item_details>
+            <h3>Instagram Clone</h3>
+            <p>Source code</p>
+            <a href="https://github.com/tdemkowski/Instagram-Clone" target="_blank">
+              <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
+            </a>
+            <p>Massive project replicating Instagram that is still in development, with the goal of having over 90% of the original site's functionality. Collaborated with one other developer. It runs on TypeScript, React, Node, Express, and PostgreSQL.</p>
+            <p>I have built most of the frontend with React from scratch, with some help of a React UI library Ant Design. Clients have the ability to sign-up and log-in to their account, create posts and set their own profile details. </p>
+            <p>We have backend user/client authentication that we built entirely from scratch (with the exception of using Json Web Tokens) using OOP. The foundation of this was set by my collaborator, where I focused on wiring it up to the frontend and managing bugs. The database is currently generated with users and posts via the typeorm-seeding library, filled with properties including email addresses, account names, comments, posted-images, etc. </p>
+          </div>
+
+          <div class="image">
+            <img src="https://i.imgur.com/yqJpKwg.png" alt="" draggable="false">
+          </div>
         </div>
 
         <div class="project_item">
-          <h3>Second project</h3>
-          <p>React Frontend</p>
-          <a
-            href="http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/"
-            target="_blank"
-          >
-            <strong
-              >http://acurac-react-frontend.s3-website.eu-central-1.amazonaws.com/</strong
-            >
-          </a>
-          <p>Node.js backend</p>
-          <a href="https://acurac-post-backend.herokuapp.com/" target="_blank">
-            <strong>https://acurac-post-backend.herokuapp.com/</strong>
-          </a>
+          <div class=project_item_details>
+            <h3>Accordion</h3>
+            <a href="https://codepen.io/tdemkowski/pen/gOrNwzG" target="_blank">
+              <strong>https://codepen.io/tdemkowski/pen/gOrNwzG</strong>
+            </a>
+            <p>Accordion UI made with HTML, SASS and Typescript.</p>
+          </div>
+
+          <div class="image">
+            <img src="https://i.imgur.com/jfU7btt.png" alt="" draggable="false">
+          </div>
         </div>
 
         <div class="project_item">
-          <h3>Instagram Clone</h3>
-          <a href="https://github.com/tdemkowski/Instagram-Clone" target="_blank">
-            <strong>https://github.com/tdemkowski/Instagram-Clone</strong>
-          </a>
+          <div class=project_item_details>
+            <h3>Clubin Design Slice</h3>
+            <a href="https://codepen.io/tdemkowski/pen/mdVebBR" target="_blank">
+              <strong>https://codepen.io/tdemkowski/pen/mdVebBR</strong>
+            </a>
+            <p>Sliced an Adobe-XD Web App design using HTML and CSS.</p>
+          </div>
+
+          <div class="image">
+            <img src="https://i.imgur.com/zLVouee.png" alt="" draggable="false">
+          </div>
         </div>
 
-        <div class="project_item">
-          <h3>Clubin Design Slice</h3>
-          <a href="https://codepen.io/tdemkowski/pen/mdVebBR" target="_blank">
-            <strong>https://codepen.io/tdemkowski/pen/mdVebBR</strong>
-          </a>
-        </div>
-
-        <div class="project_item">
-          <h3>Accordion</h3>
-          <a href="https://codepen.io/tdemkowski/pen/gOrNwzG" target="_blank">
-            <strong>https://codepen.io/tdemkowski/pen/gOrNwzG</strong>
-          </a>
-        </div>
       </div>
+
+
 
       <div id="contact">
         <h1>Contact me!</h1>
@@ -277,13 +374,13 @@
           <a
             class="anchor"
             href="https://www.linkedin.com/in/thomas-demkowski-212b0b1ba/"
-            target="_blank"
-            >linkedin</a
-          >
+            target="_blank">
+            <strong>linkedin</strong>
+          </a>
           <p>tdemkowski96@gmail.com</p>
-          <a class="anchor" href="https://github.com/tdemkowski" target="_blank"
-            >github</a
-          >
+          <a class="anchor" href="https://github.com/tdemkowski" target="_blank">
+            <strong>github</strong>
+          </a>
         </div>
       </div>
     </div>
